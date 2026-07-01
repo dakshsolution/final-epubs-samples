@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en-US">
+<head>
+<meta content="YPM1298313" name="dtb:uid"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle><text>Sustainable Luxury</text></docTitle>
+<navMap>
+<navPoint id="navPoint-1" playOrder="1"><navLabel><text>Sustainable Luxury</text></navLabel><content src="s9ml/chapter01/chapter01.xhtml"/></navPoint>
+<navPoint id="navPoint-2" playOrder="2"><navLabel><text>Accessibility Content: Extended Descriptions for Images</text></navLabel><content src="s9ml/chapter01/Exhibit_2_extended_description.xhtml"/>
+<navPoint id="navPoint-3" playOrder="3"><navLabel><text>Exhibit 2: Extended Description</text></navLabel><content src="s9ml/chapter01/Exhibit_2_extended_description.xhtml#exhibit2-longdesc"/></navPoint>
+</navPoint>
+</navMap>
+</ncx>

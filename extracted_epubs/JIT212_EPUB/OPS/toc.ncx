@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en-US">
+<head>
+<meta content="YPM1297845" name="dtb:uid"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="5"/>
+<meta name="dtb:maxPageNumber" content="5"/>
+</head>
+<docTitle><text>How Digital Marketing Can Use a Smart Phone App to Improve Any Business&#x2019;s Bottom Line &#x2014; Case from journal</text></docTitle>
+<navMap>
+<navPoint id="navPoint-1" playOrder="1"><navLabel><text>How digital marketing can use a smart phone app to improve any business&#x0027;s bottom line</text></navLabel><content src="s9ml/chapter01/chapter01.xhtml"/></navPoint>
+<navPoint id="navPoint-2" playOrder="2"><navLabel><text>Accessibility Content: Extended Descriptions for Images</text></navLabel><content src="s9ml/chapter01/Figure_2_extended_description.xhtml"/>
+<navPoint id="navPoint-3" playOrder="3"><navLabel><text>Figure 2: Extended Description</text></navLabel><content src="s9ml/chapter01/Figure_2_extended_description.xhtml#cuid-3"/></navPoint>
+</navPoint>
+</navMap>
+</ncx>

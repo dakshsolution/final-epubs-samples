@@ -1,0 +1,1451 @@
+/* === FONT FAMILIES === */
+body, li p, figcaption p, h1, h2, h3, h4, h5, h6, .unit-info, ul.bullet, cite {
+  font-family: 'Proxima Nova Regular', Verdana, Helvetica, sans-serif;
+}
+
+body > p, body > ol > li p, body > ul > li p, .page-number, section.mhhe-blk-header p, section {
+  font-family: 'nimbus', Georgia, serif;
+}
+
+section ul li p { font-family: 'nimbus', Georgia, serif; }
+section ol li p { font-family: 'nimbus', Georgia, serif; }
+li p { font-family: 'nimbus', Georgia, serif; }
+figcaption p { font-family: 'nimbus', Georgia, serif; }
+
+/* === BODY === */
+body {
+  padding: 30px 30px;
+  font-size: 1.125rem;
+}
+
+/* === PARAGRAPH === */
+p {
+  font-family: 'nimbus', Georgia, serif;
+  font-size: 1.125rem;
+  margin: 0em;
+}
+
+.content { margin-left: 20px; }
+
+/* Flowable container for dynamic content blocks */
+.dynamic-element {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dynamic-element > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dynamic-element p,
+.dynamic-element li,
+.dynamic-element span,
+.dynamic-element a {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.dynamic-element img,
+.dynamic-element table,
+.dynamic-element figure {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === ACCESSIBILITY: SCREEN-READER ONLY === */
+.hiddentext {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === HEADINGS === */
+h1 {
+  font-family: sans-serif;
+  font-size: 2rem;
+  text-transform: none;
+  text-align: left;
+  padding-top: 0em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-transform: none;
+  margin: 1.5em 0em 0.75em 0em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 1.25em 0em 0.6em 0em;
+}
+
+h4, h5, h6 {
+  margin: 1em 0em 0.5em 0em;
+}
+
+
+/* D4: h4.underlined should NOT be bold */
+h4.underlined { font-weight: normal; }
+
+header h1,
+header h2,
+header h3,
+.chtitle,
+.head,
+.chauthor1,
+.chauthor,
+.bannar-code1,
+.bannar-code {
+  letter-spacing: 0;
+  word-spacing: normal;
+  white-space: normal;
+}
+
+.h3head {
+  font-weight: unset;
+  font-family: 'nimbus', Georgia, serif;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.h3em {
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Section heading weight: subsection h2 and subsection1 h3 are not bold (per sample) */
+.subsection  { font-weight: normal; }
+.subsection1 { font-weight: normal; }
+.sub_section { color: #666666; }
+
+/* Space above each body section (wraps a heading + its content) */
+section.subsection,
+section.subsection1 {
+  margin-top: 1.5em;
+}
+
+/* === HEADER ELEMENTS (Banner Code, Date, Authors) === */
+.right1,
+.bannar-code1 {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+
+.right,
+.bannar-code {
+  text-align: right;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+}
+
+.headauthy1,
+.chauthor1 {
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  text-transform: uppercase;
+}
+
+.headauthy,
+.chauthor {
+  text-align: left;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+  text-transform: uppercase;
+}
+
+.logo,
+.banner {
+  text-align: left;
+  margin-top: 1em;
+}
+
+.logo img,
+.chapter-logo {
+  display: block;
+  max-height: 50px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* === CASE NUMBER === */
+.case-number { font-weight: bold; }
+.case-number span {
+  background-color: #0058AC;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 5px;
+  display: inline-block;
+}
+
+/* === BACKGROUND / BORDER UTILITIES === */
+.bg {
+  background-color: #EAE5DB;
+  padding: 0.8em;
+}
+
+.header-border {
+  border-top: 2px dotted #D4D4D4;
+  padding: 20px 0;
+  color: #000000;
+}
+
+/* Invisible anchor target for exhibit cross-reference links */
+.exhibit-anchor {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* === PDF-DERIVED SPACING CLASSES ===
+   Applied by step09 when the measured gap between two blocks in the PDF
+   is notably larger than normal leading. Three buckets cover the range
+   without hardcoding per-book values. */
+.gap-md { margin-top: 1.2em; }   /* 15–30 pt gap in source PDF  */
+.gap-lg { margin-top: 2em;   }   /* 30–60 pt gap in source PDF  */
+.gap-xl { margin-top: 3em;   }   /* > 60 pt gap in source PDF   */
+
+/* Horizontal rules detected from PDF separator lines */
+hr {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 1em 0;
+  height: 0;
+}
+
+.custom-rulea {
+  border-top: 3px solid #000;
+  margin: 2em 0;
+}
+
+.border-bottom { border-bottom: 1px solid black; }
+.border-top {
+  border-top: 2px solid black;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+}
+.bo-top { border-top: 1px solid black; }
+.total-border { border-bottom: 2px solid black; }
+.light-border {
+  border-bottom: 1px solid black;
+  text-align: right;
+}
+.table-caption { border-bottom: 1px solid black; }
+
+/* === RESPONSIVE MEDIA QUERY === */
+@media only screen and (max-width: 320px) {
+  h1 { font-size: 0.5em; }
+  h2 { font-size: 0.4em; }
+  h3 { font-size: 0.3em; }
+  h4 { font-size: 0.2em; }
+  p { font-size: 0.2em !important; }
+  .page-number { font-size: 0.2em !important; }
+  table td, th { font-size: 0.2em !important; }
+  div.endnote { font-size: 0.2em !important; }
+  table caption { font-size: 0.2em !important; }
+  figure img { max-width: 100% !important; margin: 0 auto; }
+}
+
+/* === INDENT / NOINDENT CLASSES === */
+
+/* Base paragraph spacing — applies to all p tags */
+p + p {
+  margin-top: 0.6em;
+}
+
+/* First paragraph directly after a heading gets a little breathing room */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p,
+header + p,
+header ~ p:first-of-type {
+  margin-top: 0.5em;
+}
+
+.indent {
+  text-indent: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* Consecutive indented paragraphs: small gap between them */
+p.indent + p.indent {
+  margin-top: 0.5em;
+}
+
+.t_indent1 {
+  text-indent: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.indent_1 {
+  margin-left: 2.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.indent_2 {
+  margin-left: 3.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.noindent {
+  text-indent: 0em;
+  margin-top: 0.6em;
+  margin-bottom: 0em;
+}
+
+.noindent1 {
+  text-indent: 0em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+
+.noindent2 {
+  text-indent: 0em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Space between paragraphs in sections and asides */
+section p + p,
+aside p + p {
+  margin-top: 0.5em;
+}
+
+/* === UNDERLINE === */
+.underlined {
+  text-indent: 1.5em;
+  font-weight: unset;
+  font-family: 'nimbus', Georgia, serif;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* D3: Underline via border-bottom */
+.underlined .uline,
+h4.underlined .uline,
+span.uline {
+  text-decoration: none;
+  border-bottom: 2px solid black;
+}
+
+/* === LISTS === */
+ol li, ul li, li {
+  font-size: 1.125rem;
+}
+
+ol li, ul li {
+  margin-bottom: 0.5em;
+}
+
+ol.none, ul.none {
+  list-style-type: none;
+  padding-left: 0;
+}
+ol.none li, ul.none li {
+  list-style-type: none;
+}
+
+/* D6: list_none = flush-left (no indent, no markers) */
+.list_none {
+  list-style-type: none;
+  margin: 0em;
+  padding-left: 0em;
+  font-family: 'nimbus', Georgia, serif;
+}
+
+/* D6: ol.list = suppress auto-numbers but KEEP indent for hardcoded markers */
+ol.list { list-style-type: none; }
+ol.list ol { list-style-type: none; }
+ol.list li p {
+  font-family: 'nimbus', Georgia, serif;
+  text-indent: -1.5em;
+}
+
+/* Alpha lists: (a), (b), (c) — CSS-generated lower-alpha markers */
+ol.list-alpha {
+  list-style-type: lower-alpha;
+  padding-left: 2em;
+}
+ol.list-alpha li p {
+  font-family: 'nimbus', Georgia, serif;
+  text-indent: 0;
+}
+
+.ref_list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 2em;
+}
+.ref_list li p {
+  text-indent: -2em;
+  margin-left: 1em;
+}
+
+/* === FIGURES & IMAGES === */
+figure {
+  margin: 1em 0em;
+}
+
+figure p {
+  font-family: sans-serif;
+  text-transform: none;
+  font-weight: normal;
+}
+
+figure img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Image sizing */
+img, table, figure { max-width: 100%; height: auto; }
+figure.img-landscape img  { display: block; width: 75%; height: auto; max-width: 100%; margin: 0 auto; }
+figure.img-portrait  img  { display: block; width: 50%; height: auto; max-width: 100%; margin: 0 auto; }
+figure.img-decorative img { display: block; width: 25%; height: auto; max-width: 50%;  margin: 0 auto; }
+figure.img-small img  { width: 25%; max-width: 50%; }
+figure.img-medium img { width: 50%; max-width: 100%; }
+figure.img-large img  { width: 75%; max-width: 100%; }
+figure.fig-align-left { text-align: left; }
+figure.fig-align-center { text-align: center; }
+figure.fig-align-right { text-align: right; }
+figure.fig-align-left img { margin-left: 0; margin-right: auto; }
+figure.fig-align-center img { margin-left: auto; margin-right: auto; }
+figure.fig-align-right img { margin-left: auto; margin-right: 0; }
+
+img.img_width {
+  text-align: center;
+  width: 75%;
+  height: auto;
+}
+
+.center1 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.image {
+  display: block;
+  margin-top: 1em;
+  margin-left: 0em;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  text-align: center;
+}
+
+/* Longdesc icon override */
+figure.img-landscape img.longdesc-icon,
+figure.img-portrait img.longdesc-icon,
+figure.img-decorative img.longdesc-icon,
+img.longdesc-icon {
+  display: inline-block;
+  width: 1em;
+  max-width: 1em;
+  height: auto;
+  margin: 0 0 0 0.25em;
+  vertical-align: middle;
+}
+
+/* === DROP CAP === */
+.dropcap {
+  float: left;
+  font-size: 4.375rem;
+  line-height: 0.80;
+  margin-right: 8px;
+  font-weight: bold;
+  color: #0058AC;
+}
+
+.drop-cap {
+  float: left;
+  font-size: 3em;
+  line-height: 0.85;
+  padding: 0.05em 0.08em 0 0;
+  font-weight: bold;
+}
+p.has-drop-cap { overflow: hidden; }
+
+.first-para {
+  text-indent: 0em;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+}
+
+p.first-para::first-letter {
+  float: left;
+  font-size: 4.375rem;
+  line-height: 0.80;
+  margin-right: 8px;
+  font-weight: bold;
+  color: #0058AC;
+}
+
+.lcap {
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 0.5em;
+}
+
+/* === TABLE BASE === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+table thead th, td,
+table tbody th, td {
+  border: 0px solid #000;
+  padding: 6px;
+  vertical-align: top;
+}
+
+/* Table header row: rules above and below */
+table thead tr th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
+table thead tr td:first-child {
+  border-top: 1px solid black;
+}
+
+/* Captions */
+table caption {
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.caption { text-align: left; }
+caption.caption {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.table-scroll {
+  margin-top: 1.0em;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+table tfoot,
+table tfoot td,
+table tfoot th {
+  border: none;
+}
+
+/* === STYLED-TABLE (reference standard) === */
+.styled-table {
+  font-family: 'nimbus', Georgia, serif;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.styled-table th, .styled-table td {
+  padding: 4px 6px;
+  border: none;
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.styled-table thead th {
+  border-top: none;
+  border-bottom: none;
+  font-weight: bold;
+  text-align: left;
+}
+
+.styled-table thead tr:last-child th {
+  border-bottom: 1px solid black;
+}
+
+.styled-table tbody th { text-align: left; font-weight: normal; }
+.styled-table tbody td { text-align: right; }
+
+tbody th.t_align_left   { text-align: left; }
+tbody th.t_align_center { text-align: center; }
+tbody th.t_align_right  { text-align: right; }
+tbody th { text-align: left; }
+
+.styled-table th:first-child {
+  width: 12%;
+  text-align: left;
+}
+
+/* === STYLED-TABLE1 (reference standard) === */
+.styled-table1 {
+  font-family: 'nimbus', Georgia, serif;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.styled-table1 thead {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.styled-table1 th, .styled-table1 td {
+  padding: 6px 5px;
+  border-collapse: collapse;
+  border: 0px solid white;
+  font-weight: normal;
+}
+
+.styled-table1 thead th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.styled-table1 tbody td { text-align: center; }
+.styled-table1 tbody th { font-weight: normal; }
+
+.styled-table1 th:first-child {
+  width: 25%;
+  text-align: left;
+}
+
+.styled-table1 tbody .sub-header { padding-top: 1em; }
+.styled-table1 tbody .sub-header1 {
+  padding-top: 1em;
+  text-transform: uppercase;
+}
+
+table.styled-table1 tbody tr.t_gap { margin-top: 1em; }
+
+.styled-table1 tbody .t_indent {
+  padding-left: 1.5em;
+  width: 20%;
+}
+
+.styled-table1 tbody .b_border { border-bottom: 2px solid black; }
+
+/* === TABLE CELL ALIGNMENT CLASSES (reference standard) === */
+table th.td_left  { text-align: left; }
+table td.td_left  { text-align: left; }
+table td.td_center { text-align: center; }
+table td.left  { text-align: left; }
+table td.left1 { margin-left: 1.5em; text-align: left; }
+
+thead th.t_align_left   { text-align: left; }
+thead th.t_align_center { text-align: center; border-bottom: 1px solid white; }
+thead th.t_align_right  { text-align: right; }
+tbody td.t_align_center { text-align: center; }
+tbody td.t_align_left   { text-align: left; }
+tbody td.t_align_right  { text-align: right; }
+
+.num { text-align: right; }
+.font-normal { font-weight: normal; }
+
+/* === TABLE BORDER STYLES (step08b detection) === */
+table.tbl-grid,
+table.tbl-grid th,
+table.tbl-grid td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+table.tbl-outer {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+table.tbl-outer th,
+table.tbl-outer td { border: none; }
+table.tbl-horizontal {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-collapse: collapse;
+}
+table.tbl-horizontal th,
+table.tbl-horizontal td {
+  border-top: 1px solid #000;
+  border-left: none;
+  border-right: none;
+}
+table.tbl-headrule { border-collapse: collapse; }
+table.tbl-headrule thead { border-bottom: 1px solid #000; }
+table.tbl-headrule thead th { border-bottom: 1px solid #000; }
+
+/* Financial-style */
+table.tbl-finrule {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-collapse: collapse;
+}
+table.tbl-finrule thead { border-bottom: 1px solid #000; }
+table.tbl-finrule thead th,
+table.tbl-finrule thead td {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+table.tbl-finrule tbody td,
+table.tbl-finrule tbody th {
+  border: none;
+  vertical-align: top;
+}
+
+/* D7: row-total — bold but NO spurious border-top */
+table tr.row-total td,
+table tr.row-total th { font-weight: bold; }
+
+/* Section header rows */
+table tr.section-header td,
+table tr.section-header th { padding-top: 1em; }
+
+/* === TABLE SHADING (reference standard) === */
+.t_color { background-color: #EEDCC5; }
+.head_color {
+  color: #FFFFFF;
+  background-color: #0058AC;
+}
+
+/* B6: Tables full width */
+.table11 {
+  border-collapse: collapse;
+  border-top: 0pt solid black;
+  border-bottom: 1.0pt solid black;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* B4: Indented child rows in financial tables */
+.t_indent { padding-left: 1.2em; }
+.table11 thead th, .table11 tbody td {
+  vertical-align: top;
+  padding: 6px 5px;
+}
+.table11 thead th {
+  vertical-align: top;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  font-style: normal;
+  font-weight: bold;
+}
+table.table11 tbody th {
+  text-align: left;
+  font-weight: normal;
+}
+
+table .b_top { border-top: 2px solid black; }
+
+/* All-caps section labels */
+.ucase { text-transform: uppercase; }
+.uc { text-transform: uppercase; }
+.nocase { text-transform: none; }
+
+/* === EXHIBIT CAPTIONS === */
+.exhibit-cap,
+figcaption.exhibit-cap,
+p.exhibit-cap {
+  text-align: left;
+}
+
+figcaption {
+  text-align: left;
+}
+
+figcaption.exhibit-cap, figcaption.exhibit-cap p, p.exhibit-cap {
+  text-align: center;
+  margin-left: 0;
+  text-indent: 0;
+}
+figcaption.exhibit-cap .table-title { margin-left: 0.4em; }
+
+.exhb {
+  font-size: 1.2em;
+  margin-left: 0.0em;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+.exhibit { color: #000000; padding-right: 1em; }
+.exhibit1 { color: #105A34; }
+
+.table_caption {
+  text-align: left;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-weight: normal;
+  padding-bottom: 0.4em;
+  margin-left: 5.7em;
+  text-indent: -5.7em;
+}
+
+.tablenum { font-style: normal; font-weight: bold; }
+.table-title { margin-left: 1.0em; }
+
+.fignumber {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: none;
+}
+.img-title {
+  display: inline;
+  margin-top: -0.0em;
+  margin-left: 0.5em;
+  text-align: left;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.table-number {
+  text-align: right;
+  border-bottom: 2px solid black;
+}
+
+/* === SOURCE / NOTE TEXT === */
+.source { margin: 0.5em 0; font-size: 1em; }
+.source p {
+  font-size: 0.9em;
+  margin: 0.5em 0em 0em 0em;
+}
+.source p + p { margin: 0.5em 0em 0em 0em; }
+
+aside.source::before {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  display: block;
+  content: "";
+  width: 20%;
+}
+
+figure .source-tbl,
+aside.source-tbl {
+  font-family: sans-serif;
+  font-weight: normal;
+  text-transform: initial;
+  text-align: left;
+  margin-top: 0.6em;
+  font-style: normal;
+  position: relative;
+  top: 0em;
+  margin-left: 0em;
+}
+
+figure .source-tbl p,
+figure .source-tbl p.source,
+aside.source-tbl p,
+aside.source-tbl p.source,
+p.source {
+  font-size: 0.9em;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 0.25em;
+  margin-bottom: 0em;
+}
+
+.source-credit {
+  padding: 0.5em 0em;
+}
+.source-credit p {font-size: 0.9em; }
+
+/* Page 1: tighten spacing and align source-credit with contact block */
+#cuid-14b {
+  margin-top: 0.20em;
+  margin-bottom: 0em;
+  margin-left: 0em;
+  margin-right: 0em;
+  text-indent: 0em;
+}
+
+#cuid-394a,#cuid-14b {
+  padding: 0.45em 0em 0.2em 0em;
+}
+
+#cuid-394a p {
+  font-size: 0.9em;
+  margin: 0em;
+  text-indent: 0em;
+  
+}
+
+.source-credit1 { margin: 1em 0; padding: 0.5em 0em; }
+.source-credit1 p { font-size: 1em; }
+
+.source-credit2 {
+  margin-top: 5em;
+  color: black;
+  padding: 0.5em 0em;
+}
+.source-credit2 p { font-size: 0.9em; }
+
+.note {
+  display: block;
+  text-align: left;
+  color: #666666;
+  font-size: 0.9em;
+  padding: 0.5em 0em;
+}
+
+.table-legend { font-size: 0.9em; }
+.table-legend p { font-size: inherit; margin-top: 0.5em; }
+
+p.table-annotation { font-size: 0.85em; color: #444; margin: 0.3em 0 1em; }
+
+/* === AUTHOR BIO === */
+.author-bio {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-top: 0.5em;
+}
+.author-bio p.italic {font-style:italic;}
+
+.author { margin: 1.5em 0em 0.5em 0em; }
+.byline {
+  font-size: 1em;
+  margin-top: 0.2em;
+  margin-bottom: 3em;
+}
+
+/* === PAGE NUMBERS (reference standard) === */
+.page-number-wrap {
+  display: block;
+  clear: both;
+  overflow: visible;
+}
+
+.page-number {
+  font-family: sans-serif;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  display: inline-block;
+  padding: 3px;
+  font-size: 1rem;
+  float: right;
+  clear: both;
+  margin-left: 1em !important;
+  margin-top: 1em;
+}
+
+/* === FOOTNOTES (reference standard) === */
+aside.footnote::before {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  display: block;
+  content: "";
+  border-top: 2px solid black;
+  width: 20%;
+}
+
+.footnote {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+.footnote p { font-size: 1em; }
+
+/* Pipeline-generated footnotes */
+.footnotedata {
+  margin-top: 1em;
+  margin-bottom: 0.0em;
+  font-size: 0.95em;
+}
+.footnotedata p {
+  font-size: 0.95em;
+  line-height: 1.25;
+}
+.footnotedata::before {
+  display: block;
+  content: " ";
+  border: 1px solid black;
+  width: 300px;
+  margin-bottom: 0.3em;
+}
+.footnotedata + .footnotedata::before {
+  display: none;
+  content: none;
+  border: none;
+  margin: 0;
+}
+.footnotedata0 p.indent {
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+  padding-top: 0em !important;
+  padding-bottom: 0em !important;
+  font-size: 0.9em;
+}
+
+/* === ACCESSIBLE LINKS === */
+a {
+  overflow-wrap: break-word;
+}
+
+/* WCAG 2.2: visible keyboard focus indicator */
+a:focus-visible {
+  outline: 2px solid #0058AC;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.link-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a[role~='doc-noteref'] {
+  vertical-align: baseline;
+  line-height: 1;
+  font-size: 75%;
+  text-decoration: none;
+}
+
+
+/* === BANNER / LOGO === */
+.banner {
+  display: block;
+  margin: 1em;
+  float: left;
+}
+
+.banner-left   { text-align: left; }
+.banner-right  { text-align: right; }
+.banner-center { text-align: center; }
+
+.chapter-logo {
+  display: block;
+  max-height: 50px;
+  width: auto;
+  max-width: 100%;
+}
+
+.banner-left   .chapter-logo { margin-left: 0;    margin-right: auto; }
+.banner-right  .chapter-logo { margin-left: auto; margin-right: 0; }
+.banner-center .chapter-logo { margin-left: auto; margin-right: auto; }
+
+.bannar-code {
+  font-size: 0.9375rem;
+  font-family: sans-serif;
+  font-weight: normal;
+  text-align: right;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+}
+
+.bannar-code1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: right;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* === CHAPTER TITLE === */
+h1,
+h1.chtitle,
+header > h1:last-of-type {
+  padding-top: 0.0em;
+  text-transform: none;
+  text-align: left;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+.longh1 { text-transform: capitalize; }
+
+.chauthor1 {
+  text-align: left;
+  font-size: 0.9em;
+  font-family: 'Proxima Nova Regular', Verdana, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: none;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+}
+
+.chauthor {
+  text-align: left;
+  font-size: 0.9375rem;
+  font-family: 'Proxima Nova Regular', Verdana, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: none;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
+}
+
+.headauthy1 {
+  font-size: 0.9em;
+  font-family: 'Proxima Nova Regular', Verdana, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.headauthy {
+  font-size: 0.9375rem;
+  font-family: 'Proxima Nova Regular', Verdana, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* === TITLE SECTION === */
+.title-section {
+  margin-top: 10em;
+  margin-bottom: 3em;
+}
+.title-section h1 { text-align: left; }
+.subtitle { font-size: 1.3em; }
+
+.ptitle {
+  border-bottom: 4px solid black;
+  text-align: left;
+}
+
+/* === HEADER SECTION (rootsec layout) === */
+.rootsec {
+  position: relative;
+  display: table-row;
+}
+
+.header_section { margin-left: 1em; }
+.header_section_top {
+  display: flex;
+  gap: 20px;
+  min-height: 60%;
+  flex-direction: column;
+  justify-content: end;
+  padding-top: 8em;
+}
+
+.f1 {
+  display: inline-block;
+  border-bottom: 5px solid black;
+  margin-bottom: 3em;
+}
+
+/* === SIDE TEXT === */
+.side-text {
+  border-left: 25px solid black;
+  width: 100px;
+  height: 280px;
+  padding-left: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.side-text p { color: #DC081D; }
+
+.sidetext1 {
+  border-left: 10px solid black;
+  padding-left: 0.5em;
+  margin: 1em 0em;
+}
+.sidetext1 p {
+  color: #790410;
+  font-size: 1.3em;
+}
+
+/* === MISC UTILITIES === */
+.para-align { display: flex; gap: 1.5em; }
+.thirdpara img { width: 300px; height: 300px; }
+.paraspace { margin-top: 1em; }
+.paraspace-italic { font-style: italic; font-size: 1em; }
+
+.box-align {
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.8em;
+}
+.box-align1 {
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.8em;
+}
+.box-align .indent { font-size: 1em; }
+.box-align1 .noindent { font-size: 1em; }
+
+.text-color { color: #DC081D; }
+
+.box_boder {
+  display: inline-block;
+  padding: 0.1em 0em;
+  border: 2px solid #0058AC;
+}
+.box {
+  padding: 0.1em;
+  background-color: #0058AC;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.box1 {
+  padding: 0.1em;
+  background-color: #ffffff;
+  color: #790410;
+  padding-right: 0.5em;
+}
+
+.italic { font-style: italic; }
+.entity { text-align: center; margin: 0.5em 0em; }
+
+.paraindent {
+  margin-bottom: 1em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.smallcaps { font-variant: small-caps; }
+h3.smallcap, .smallcap h3 {
+  font-variant: small-caps !important;
+  font-weight: bold;
+}
+
+.spara {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  padding-bottom: 0.3em;
+}
+
+/* === CASE CENTRE COVER FOOTER === */
+.casecentre-cover-footer {
+  border-top: 1px solid #000;
+  margin-top: 1.2em;
+  padding-top: 0.7em;
+}
+
+.casecentre-line {
+  font-family: sans-serif;
+  font-size: 0.9em;
+  text-indent: 0;
+  margin: 0.2em 0;
+}
+
+.casecentre-label {
+  display: inline-block;
+  width: 1.1em;
+  font-weight: bold;
+}
+
+.casecentre-line a {
+  text-decoration: underline;
+}
+
+.blogop {
+  font-size: 1.2em;
+  margin: 0em;
+  font-weight: bold;
+}
+.mt0 { margin: 0em; }
+
+.pad-top {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mleft2 {
+  margin-left: 0em;
+  font-size: 0.8em;
+}
+
+.autho_page {
+  font-family: serif;
+  font-size: 1em;
+}
+
+.headc { text-align: center !important; }
+.tdright { text-align: right; }
+.tdcenter { text-align: center; }
+
+/* === MISC TEXT ELEMENTS === */
+aside h2 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 1em;
+}
+
+blockquote p { font-size: 1em; }
+
+sup {
+  font-size: 75%;
+  line-height: 1;
+  position: relative;
+  top: 0;
+  vertical-align: baseline;
+}
+
+aside sup {
+  font-size: 100%;
+  vertical-align: baseline;
+  top: 0;
+}
+
+dt { display: inline; }
+dd { display: inline; margin: 0em 0em 0em 0.3em; }
+
+span.td_bottom {
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  border-bottom: 1px solid black;
+  width: 50%;
+}
+span.td_bottom1 {
+  padding-bottom: 0.5em;
+  padding-left: 2.5em;
+  border-bottom: 1px solid black;
+  width: 50%;
+}
+
+span.small { font-size: 0.9em; }
+
+.hang { text-indent: -1.5em; }
+
+.m01 {
+  text-transform: none;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+
+.m02 {
+  text-indent: 0em;
+  margin-top: -0.7em;
+  margin-bottom: 0em;
+}
+
+.chapend-icon { margin: 5em 0em 0em 0em; }
+
+.mitsloan-logo img { padding-left: 0em; }
+
+/* === FOOTER === */
+.footer {
+  font-size: 0.8em;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+
+.footer1 {
+  font-size: 0.8em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.footer-info {
+  font-size: 0.8em;
+  margin-top: 5em;
+}
+
+.fsource {
+  text-transform: none;
+  text-align: left;
+  font-weight: normal;
+}
+
+.ffootnote {
+  text-transform: none;
+  text-align: left;
+  font-weight: normal;
+}
+
+.fnote {
+  text-transform: none;
+  text-align: left;
+  font-weight: normal;
+}
+
+/* author affiliation line in the header (under each byline) */
+.author-affil {
+  text-align: left;
+  margin-top: 0em;
+  margin-bottom: 0.4em;
+  font-size: 0.95em;
+}
+
+
+/* === EQUATIONS === */
+p.equation {
+  text-align: center;
+  margin: 1em 1em;
+  font-style: italic;
+}
+.eq-frac {
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0 0.3em;
+  vertical-align: middle;
+}
+.article-logo{
+text-align:center;
+}
+
+.authors-sec{
+margin-top:1em;
+margin-bottom:1em;
+}
+.authors-sec p{
+margin:0.5em 2em;
+background-color:#FFFFFF;
+}
+
+.list-style{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.mp0{
+margin:0em 0em 1em 0em;
+padding:0em;
+}
+.mp0 li{
+margin-top:1em;
+}
+.mp0 li p{
+margin:0em;
+}
+
+.bold{
+font-weight:bold;
+}
+
+h3{
+text-transform: uppercase;
+}
+.centext{
+text-align:center;
+margin:1em 0em;}
+
+.bgc{
+background-color:#FFFFFF;
+}
+
+/* Match emphasis style seen in source PDF for section lead terms */
+#cuid-39 strong {
+  font-style: italic;
+}
+
+#cuid-49b strong {
+  font-style: italic;
+  font-weight: normal;
+}
