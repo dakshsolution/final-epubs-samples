@@ -27,7 +27,7 @@ jobs:
       - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 lxml pypdfium2
+          pip install beautifulsoup4 lxml pypdfium2 pillow
 
       - name: Build EPUB index and split views
         run: python build_epub_index.py
