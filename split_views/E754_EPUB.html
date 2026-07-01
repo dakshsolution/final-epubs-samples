@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Metrics at DelishGo - Split View</title>
+  <style>
+    body { margin: 0; font-family: Segoe UI, Tahoma, sans-serif; background: #f5f7fb; color: #1f2937; }
+    .header { padding: 12px 16px; background: #0f172a; color: white; display: flex; justify-content: space-between; gap: 10px; }
+    .header a { color: #93c5fd; text-decoration: none; }
+    .layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 52px); }
+    .sidebar { border-right: 1px solid #d1d5db; padding: 12px; overflow: auto; background: #ffffff; }
+    .sidebar h3 { margin: 12px 0 6px; font-size: 14px; }
+    .sidebar ul { margin: 0; padding-left: 18px; }
+    .sidebar li { margin: 4px 0; line-height: 1.35; }
+    .sidebar a { color: #0a3ea3; text-decoration: none; }
+    .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    iframe { width: 100%; height: calc(100vh - 52px); border: none; background: white; }
+    .missing { display: flex; align-items: center; justify-content: center; font-weight: 600; color: #b91c1c; background: #fee2e2; }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { max-height: 42vh; border-right: none; border-bottom: 1px solid #d1d5db; }
+      .panes { grid-template-columns: 1fr; }
+      iframe { height: 58vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <strong>Financial Metrics at DelishGo</strong>
+    <a href="../index.html">Back to index</a>
+  </div>
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>TOC Links</h3>
+      <ul><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/chapter01.xhtml" target="epubPane">Financial Metrics at DelishGo</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_1_extended_description.xhtml" target="epubPane">Accessibility Content: Extended Descriptions for Images</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_1_extended_description.xhtml#longexh1" target="epubPane">Exhibit 1: Extended Description</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_2_extended_description.xhtml#longexh2" target="epubPane">Exhibit 2: Extended Description</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_3_extended_description.xhtml#longexh3" target="epubPane">Exhibit 3: Extended Description</a></li></ul>
+      <h3>Chapter XHTML Links</h3>
+      <ul><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/chapter01.xhtml" target="epubPane">chapter01.xhtml</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_1_extended_description.xhtml" target="epubPane">Exhibit_1_extended_description.xhtml</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_2_extended_description.xhtml" target="epubPane">Exhibit_2_extended_description.xhtml</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/Exhibit_3_extended_description.xhtml" target="epubPane">Exhibit_3_extended_description.xhtml</a></li><li><a href="../extracted_epubs/E754_EPUB/OPS/s9ml/remarks.xhtml" target="epubPane">remarks.xhtml</a></li></ul>
+    </aside>
+    <section class="panes">
+      <iframe name="epubPane" src="../extracted_epubs/E754_EPUB/OPS/s9ml/chapter01/chapter01.xhtml" title="EPUB HTML"></iframe>
+      <iframe name="pdfPane" src="../vendor_pdfs/E754.pdf" title="PDF"></iframe>
+    </section>
+  </div>
+</body>
+</html>
