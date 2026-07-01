@@ -56,6 +56,22 @@ def normalize_key(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", name.lower())
 
 
+def resolve_existing_case(path: Path) -> Path:
+    parent = path.parent
+    if not parent.exists():
+        return path
+
+    target = path.name.casefold()
+    try:
+        for child in parent.iterdir():
+            if child.name.casefold() == target:
+                return child
+    except OSError:
+        return path
+
+    return path
+
+
 def encode_rel_href(from_dir: Path, to_path: Path, fragment: str | None = None) -> str:
     rel_path = os.path.relpath(to_path, start=from_dir)
     href = quote(Path(rel_path).as_posix(), safe="/-._~")
@@ -498,10 +514,11 @@ def process_books(args: argparse.Namespace) -> list[BookRecord]:
     books: list[BookRecord] = []
 
     for epub in epub_files:
-        book_extract_dir = (root / extracted_root / epub.stem).resolve()
+        book_extract_dir = resolve_existing_case(root / extracted_root / epub.stem).resolve()
         if book_extract_dir.exists():
             shutil.rmtree(book_extract_dir)
         book_extract_dir.mkdir(parents=True, exist_ok=True)
+        book_extract_dir = resolve_existing_case(book_extract_dir).resolve()
 
         with zipfile.ZipFile(epub, "r") as zf:
             zf.extractall(book_extract_dir)
@@ -517,11 +534,13 @@ def process_books(args: argparse.Namespace) -> list[BookRecord]:
 
         preview_rel: Path | None = None
         if pdf_match_abs:
-            out_preview = root / preview_root / f"{epub.stem}.png"
+            out_preview = resolve_existing_case(root / preview_root / f"{epub.stem}.png")
             if render_first_pdf_page(pdf_match_abs, out_preview):
+                out_preview = resolve_existing_case(out_preview)
                 preview_rel = out_preview.relative_to(root)
 
-        split_rel = split_root / f"{epub.stem}.html"
+        split_file = resolve_existing_case(root / split_root / f"{epub.stem}.html")
+        split_rel = split_file.relative_to(root)
 
         book = BookRecord(
             epub_file=epub.relative_to(root),
@@ -533,7 +552,7 @@ def process_books(args: argparse.Namespace) -> list[BookRecord]:
             pdf_file=pdf_match_rel,
         )
 
-        write_split_page(book, root / split_rel)
+        write_split_page(book, split_file)
         books.append(book)
 
     return books
